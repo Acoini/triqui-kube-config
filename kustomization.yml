@@ -9,5 +9,12 @@ commonLabels:
 
 
 resources:
+  - workloads/excalidraw/ns.yml
+  - workloads/excalidraw/deployment.yml
   - application.yml
-  - dev/deployment.yml
+  - deployment.yml
+
+patchesStrategicMerge:
+  - overlays/staging/deployment.yml
+  - overlays/staging/application.yml
+
