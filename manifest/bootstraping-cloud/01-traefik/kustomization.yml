@@ -3,15 +3,17 @@ kind: Kustomization
 namespace: traefik
 
 resources:
-  - 00-namespace.yml
-  - 01-account.yml
-  - 01-role.yml
-  - 02-role-binding.yml
-  - 03-traefik-services.yml
-  - 03-traefik.yml
+  - namespace.yml
 
   # Traefik Resource Definitions
   - https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-definition-v1.yml
 
   # RBAC for Traefik
   - https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-rbac.yml
+
+
+helmCharts:
+  - releaseName: traefik
+    name: traefik
+    repo: https://traefik.github.io/charts
+    version: 10.0.0
