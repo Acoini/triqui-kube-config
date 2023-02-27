@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: traefik
+
+resources:
+  - 00-namespace.yml
+  - 01-account.yml
+  - 01-role.yml
+  - 02-role-binding.yml
+  - 03-traefik-services.yml
+  - 03-traefik.yml
+
+  # Traefik Resource Definitions
+  - https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-definition-v1.yml
+
+  # RBAC for Traefik
+  - https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-rbac.yml
