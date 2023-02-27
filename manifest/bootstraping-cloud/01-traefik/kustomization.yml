@@ -5,15 +5,9 @@ namespace: traefik
 resources:
   - namespace.yml
 
-  # Traefik Resource Definitions
-  - https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-definition-v1.yml
-
-  # RBAC for Traefik
-  - https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-rbac.yml
-
-
 helmCharts:
-  - releaseName: traefik
-    name: traefik
+  - name: traefik
+    releaseName: traefik
     repo: https://traefik.github.io/charts
     version: 10.0.0
+    valuesFile: values.yml
