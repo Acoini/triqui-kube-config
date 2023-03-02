@@ -1,8 +1,0 @@
-deployment:
-  replicas: 1
-
-service:
-  spec:
-    loadBalancerIP: 20.231.254.229
-  annotations:
-    service.beta.kubernetes.io/azure-load-balancer-resource-group: MC_triqui-rg_triquiCluster_eastus
