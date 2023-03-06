@@ -7,3 +7,4 @@ helmCharts:
     name: cert-manager
     repo: https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.crds.yaml
     version: 1.11.0
+    valuesFile: values.yml
