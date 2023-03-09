@@ -4,6 +4,7 @@ metadata:
   name: private-repo-creds
   namespace: argocd
   labels:
+    app: triqui
     argocd.argoproj.io/secret-type: repo-creds
 stringData:
   type: git
