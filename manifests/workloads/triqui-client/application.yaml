@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Bicora/triqui-kube-config
+    targetRevision: HEAD
+    path: manifests/workloads/triqui-client
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: triqui

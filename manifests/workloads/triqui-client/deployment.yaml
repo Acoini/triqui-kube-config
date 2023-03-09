@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: triqui-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: triqui-client
+  template:
+    metadata:
+      labels:
+        app: triqui-client
+    spec:
+      containers:
+      - name: triqui-client
+        image: ghcr.io/bicora/triqui:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          containerPort: 80
