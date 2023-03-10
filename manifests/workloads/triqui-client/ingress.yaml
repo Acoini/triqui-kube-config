@@ -9,7 +9,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /playground
+      - path: /
         pathType: Exact
         backend:
           service:
