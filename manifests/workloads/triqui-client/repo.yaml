@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: triqui-repo-creds
+  namespace: argocd
+  labels:
+    app: triqui
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: https://github.com/Bicora/triqui-kube-config
+  username: VallecillaJesus
+  password: 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
