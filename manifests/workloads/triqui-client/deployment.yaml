@@ -31,7 +31,7 @@ metadata:
   name: triqui-client-svc
 spec:
   selector:
-    app.kubernetes.io/name: triqui-client-deployment
+    app: triqui-client-deployment
   ports:
     - protocol: TCP
       port: 80
