@@ -25,3 +25,16 @@ spec:
           containerPort: 80
       imagePullSecrets:
         - name: triqui-registry
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: triqui-client-svc
+spec:
+  selector:
+    app: triqui-client
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+
