@@ -21,8 +21,7 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - name: http
-          containerPort: 80
+          - containerPort: 80
       imagePullSecrets:
         - name: triqui-registry
 ---
@@ -32,9 +31,9 @@ metadata:
   name: triqui-client-svc
 spec:
   selector:
-    app: triqui-client
+    app.kubernetes.io/name: triqui-client
   ports:
-  - name: http
-    port: 80
-    targetPort: 80
+    - protocol: TCP
+      port: 80
+      targetPort: 80 
 
