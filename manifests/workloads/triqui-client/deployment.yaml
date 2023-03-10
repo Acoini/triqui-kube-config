@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: triqui-client-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: triqui-client-deployment
