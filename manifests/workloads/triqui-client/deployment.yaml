@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: triqui-client
+  name: triqui-client-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: triqui-client
+      app: triqui-client-deployment
   template:
     metadata:
       labels:
-        app: triqui-client
+        app: triqui-client-deployment
     spec:
       containers:
       - name: triqui-client
@@ -31,7 +31,7 @@ metadata:
   name: triqui-client-svc
 spec:
   selector:
-    app.kubernetes.io/name: triqui-client
+    app.kubernetes.io/name: triqui-client-deployment
   ports:
     - protocol: TCP
       port: 80
