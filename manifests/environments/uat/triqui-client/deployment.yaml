@@ -23,7 +23,7 @@ spec:
         ports:
           - containerPort: 80
       imagePullSecrets:
-        - name: triqui-registry
+        - name: ghcr-auth
 ---
 apiVersion: v1
 kind: Service
