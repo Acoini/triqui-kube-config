@@ -1,8 +1,11 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: ghcr-auth
+  name: ghcr-auth 
 data:
-  .dockerconfigjson: ewoJImF1dGhzIjogewoJCSJnaGNyLmlvIjogewoJCQkiYXV0aCI6ICJkbUZzYkdWamFXeHNZV3BsYzNWek9tZG9jRjlKTWtKaE0xRktZMjFtWVVwYWVWbFZaMDk1YlVkd056SmhlV2xUWkZvemRVdEdSa2M9IgoJCX0KCX0KfQ==
+  .dockerconfigjson: |
+    ewoJImF1dGhzIjogewoJCSJnaGNyLmlvIjogewoJCQkiYXV0aCI6ICJkbUZzYkdWamFXeHNZV3Bs
+    YzNWek9tZG9jRjlKTWtKaE0xRktZMjFtWVVwYWVWbFZaMDk1YlVkd056SmhlV2xUWkZvemRVdEdS
+    a2M9IgoJCX0KCX0KfQ==
 type: kubernetes.io/dockerconfigjson
 
