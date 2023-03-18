@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Bicora/triqui-kube-config
     targetRevision: HEAD
-    path: manifests/workloads/triqui-client
+    path: manifests/environments/uat/triqui-client
   destination:
     server: https://kubernetes.default.svc
     namespace: triqui
