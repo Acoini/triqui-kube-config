@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - 01-argocd
+  - 01-nginx-ingress
