@@ -1,0 +1,289 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "argoproj.io/v1alpha1",
+      "kind": "Application",
+      "metadata": {
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"argoproj.io/v1alpha1\",\"kind\":\"Application\",\"metadata\":{\"annotations\":{},\"labels\":{\"app.kubernetes.io/instance\":\"triqui\"},\"name\":\"triqui\",\"namespace\":\"argocd\"},\"spec\":{\"destination\":{\"namespace\":\"triqui\",\"server\":\"https://kubernetes.default.svc\"},\"project\":\"default\",\"source\":{\"path\":\"manifests/environments/uat/triqui-client\",\"repoURL\":\"https://github.com/Bicora/triqui-kube-config\",\"targetRevision\":\"HEAD\"},\"syncPolicy\":{\"automated\":{\"prune\":true,\"selfHeal\":true},\"syncOptions\":[\"createNamespace=true\"]}}}\n"
+        },
+        "creationTimestamp": "2023-03-18T22:59:56Z",
+        "deletionGracePeriodSeconds": 0,
+        "deletionTimestamp": "2023-03-18T23:16:15Z",
+        "finalizers": [
+          "resources-finalizer.argocd.argoproj.io/foreground"
+        ],
+        "generation": 100,
+        "labels": {
+          "app.kubernetes.io/instance": "triqui"
+        },
+        "name": "triqui",
+        "namespace": "argocd",
+        "resourceVersion": "288499",
+        "uid": "3e011d9a-7af5-42b0-a4ec-d30c263f8212"
+      },
+      "spec": {
+        "destination": {
+          "namespace": "triqui",
+          "server": "https://kubernetes.default.svc"
+        },
+        "project": "default",
+        "source": {
+          "path": "manifests/environments/uat/triqui-client",
+          "repoURL": "https://github.com/Bicora/triqui-kube-config",
+          "targetRevision": "HEAD"
+        },
+        "syncPolicy": {
+          "automated": {
+            "prune": true,
+            "selfHeal": true
+          },
+          "syncOptions": [
+            "createNamespace=true"
+          ]
+        }
+      },
+      "status": {
+        "health": {
+          "status": "Progressing"
+        },
+        "history": [
+          {
+            "deployStartedAt": "2023-03-18T23:16:15Z",
+            "deployedAt": "2023-03-18T23:18:46Z",
+            "id": 0,
+            "revision": "a83fe3e383eada501b6b2c170accf579616940e7",
+            "source": {
+              "path": "manifests/environments/uat/triqui-client",
+              "repoURL": "https://github.com/Bicora/triqui-kube-config",
+              "targetRevision": "HEAD"
+            }
+          }
+        ],
+        "operationState": {
+          "finishedAt": "2023-03-18T23:18:46Z",
+          "message": "successfully synced (all tasks run)",
+          "operation": {
+            "initiatedBy": {
+              "automated": true
+            },
+            "retry": {
+              "limit": 5
+            },
+            "sync": {
+              "prune": true,
+              "revision": "a83fe3e383eada501b6b2c170accf579616940e7",
+              "syncOptions": [
+                "createNamespace=true"
+              ]
+            }
+          },
+          "phase": "Succeeded",
+          "retryCount": 4,
+          "startedAt": "2023-03-18T23:16:15Z",
+          "syncResult": {
+            "resources": [
+              {
+                "group": "",
+                "hookPhase": "Running",
+                "kind": "Namespace",
+                "message": "namespace/triqui created",
+                "name": "triqui",
+                "namespace": "triqui",
+                "status": "Synced",
+                "syncPhase": "Sync",
+                "version": "v1"
+              },
+              {
+                "group": "",
+                "hookPhase": "Running",
+                "kind": "Secret",
+                "message": "secret/ghcr-auth created",
+                "name": "ghcr-auth",
+                "namespace": "triqui",
+                "status": "Synced",
+                "syncPhase": "Sync",
+                "version": "v1"
+              },
+              {
+                "group": "",
+                "hookPhase": "Running",
+                "kind": "Secret",
+                "message": "secret/triqui-repo-creds created",
+                "name": "triqui-repo-creds",
+                "namespace": "argocd",
+                "status": "Synced",
+                "syncPhase": "Sync",
+                "version": "v1"
+              },
+              {
+                "group": "",
+                "hookPhase": "Running",
+                "kind": "Service",
+                "message": "service/triqui-client-svc created",
+                "name": "triqui-client-svc",
+                "namespace": "triqui",
+                "status": "Synced",
+                "syncPhase": "Sync",
+                "version": "v1"
+              },
+              {
+                "group": "apps",
+                "hookPhase": "Running",
+                "kind": "Deployment",
+                "message": "deployment.apps/triqui-client-deployment created",
+                "name": "triqui-client-deployment",
+                "namespace": "triqui",
+                "status": "Synced",
+                "syncPhase": "Sync",
+                "version": "v1"
+              },
+              {
+                "group": "networking.k8s.io",
+                "hookPhase": "Running",
+                "kind": "Ingress",
+                "message": "ingress.networking.k8s.io/triqui-client-ingress created",
+                "name": "triqui-client-ingress",
+                "namespace": "triqui",
+                "status": "Synced",
+                "syncPhase": "Sync",
+                "version": "v1"
+              },
+              {
+                "group": "bitnami.com",
+                "hookPhase": "Running",
+                "kind": "SealedSecret",
+                "message": "sealedsecret.bitnami.com/ghcr-secret created",
+                "name": "ghcr-secret",
+                "namespace": "triqui",
+                "status": "Synced",
+                "syncPhase": "Sync",
+                "version": "v1alpha1"
+              },
+              {
+                "group": "argoproj.io",
+                "hookPhase": "Running",
+                "kind": "Application",
+                "message": "application.argoproj.io/triqui unchanged. Warning: Detected changes to resource triqui which is currently being deleted.",
+                "name": "triqui",
+                "namespace": "argocd",
+                "status": "Synced",
+                "syncPhase": "Sync",
+                "version": "v1alpha1"
+              }
+            ],
+            "revision": "a83fe3e383eada501b6b2c170accf579616940e7",
+            "source": {
+              "path": "manifests/environments/uat/triqui-client",
+              "repoURL": "https://github.com/Bicora/triqui-kube-config",
+              "targetRevision": "HEAD"
+            }
+          }
+        },
+        "reconciledAt": "2023-03-18T23:18:47Z",
+        "resources": [
+          {
+            "kind": "Namespace",
+            "name": "triqui",
+            "status": "Synced",
+            "version": "v1"
+          },
+          {
+            "kind": "Secret",
+            "name": "triqui-repo-creds",
+            "namespace": "argocd",
+            "status": "Synced",
+            "version": "v1"
+          },
+          {
+            "kind": "Secret",
+            "name": "ghcr-auth",
+            "namespace": "triqui",
+            "status": "Synced",
+            "version": "v1"
+          },
+          {
+            "health": {
+              "status": "Healthy"
+            },
+            "kind": "Service",
+            "name": "triqui-client-svc",
+            "namespace": "triqui",
+            "status": "Synced",
+            "version": "v1"
+          },
+          {
+            "group": "apps",
+            "health": {
+              "status": "Healthy"
+            },
+            "kind": "Deployment",
+            "name": "triqui-client-deployment",
+            "namespace": "triqui",
+            "status": "Synced",
+            "version": "v1"
+          },
+          {
+            "group": "argoproj.io",
+            "kind": "Application",
+            "name": "triqui",
+            "namespace": "argocd",
+            "status": "Synced",
+            "version": "v1alpha1"
+          },
+          {
+            "group": "bitnami.com",
+            "health": {
+              "status": "Missing"
+            },
+            "kind": "SealedSecret",
+            "name": "ghcr-secret",
+            "namespace": "triqui",
+            "status": "OutOfSync",
+            "version": "v1alpha1"
+          },
+          {
+            "group": "networking.k8s.io",
+            "health": {
+              "status": "Progressing"
+            },
+            "kind": "Ingress",
+            "name": "triqui-client-ingress",
+            "namespace": "triqui",
+            "status": "Synced",
+            "version": "v1"
+          }
+        ],
+        "sourceType": "Directory",
+        "summary": {
+          "images": [
+            "ghcr.io/bicora/triqui:latest"
+          ]
+        },
+        "sync": {
+          "comparedTo": {
+            "destination": {
+              "namespace": "triqui",
+              "server": "https://kubernetes.default.svc"
+            },
+            "source": {
+              "path": "manifests/environments/uat/triqui-client",
+              "repoURL": "https://github.com/Bicora/triqui-kube-config",
+              "targetRevision": "HEAD"
+            }
+          },
+          "revision": "a83fe3e383eada501b6b2c170accf579616940e7",
+          "status": "OutOfSync"
+        }
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  },
+  "spec": {
+    "finalizers": []
+  }
+}
