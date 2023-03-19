@@ -15,7 +15,6 @@ spec:
       containers:
       - name: triqui-client
         image: ghcr.io/bicora/triqui:latest
-        
         resources:
           limits:
             memory: "128Mi"
