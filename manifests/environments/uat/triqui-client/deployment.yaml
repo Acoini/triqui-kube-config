@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: triqui-client
-        image: ghcr.io/bicora/triqui:latest
+        image: ghcr.io/dieguini/python-flask-sample:main
         resources:
           limits:
             memory: "128Mi"
