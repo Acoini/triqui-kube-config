@@ -15,4 +15,4 @@ spec:
           service:
             name: triqui-client-svc
             port:
-              name: http
+              number: 80
