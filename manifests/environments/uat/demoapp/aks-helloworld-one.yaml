@@ -16,7 +16,7 @@ spec:
       - name: aks-helloworld-one
         image: ghcr.io/dieguini/python-flask-sample:main
         ports:
-        - containerPort: 80
+        - containerPort: 5000
         env:
         - name: TITLE
           value: "Welcome to Azure Kubernetes Service (AKS)"
