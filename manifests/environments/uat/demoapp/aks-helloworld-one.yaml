@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: aks-helloworld-one
-        image: mcr.microsoft.com/azuredocs/aks-helloworld:v1
+        image: ghcr.io/dieguini/python-flask-sample:main
         ports:
         - containerPort: 80
         env:
