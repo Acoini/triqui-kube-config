@@ -13,7 +13,7 @@ spec:
         app: triqui-client-deployment
     spec:
       containers:
-      - name: triqui-client
+      - name: triqui-client-deployment
         image: ghcr.io/bicora/triqui:latest
         resources:
           limits:
