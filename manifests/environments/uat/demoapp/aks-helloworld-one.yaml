@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: aks-helloworld-one
-        image: ghcr.io/dieguini/python-flask-sample:main
+        image: mcr.microsoft.com/azuredocs/aks-helloworld:v1
         ports:
-        - containerPort: 5000
+        - containerPort: 80
         env:
         - name: TITLE
           value: "Welcome to Azure Kubernetes Service (AKS)"
@@ -29,6 +29,5 @@ spec:
   type: ClusterIP
   ports:
   - port: 80
-    targetPort: 5000
   selector:
     app: aks-helloworld-one
