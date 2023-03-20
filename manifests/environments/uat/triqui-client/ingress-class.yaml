@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: triqui-class
+spec:
+  controller: nginx-controller
+  parameters:
+    apiGroup: networking.k8s.io
+    kind: Ingress
+    name: nginx
+    namespace: ingress-nginx
