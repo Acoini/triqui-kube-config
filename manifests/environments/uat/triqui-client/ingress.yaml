@@ -4,7 +4,7 @@ metadata:
   name: triqui-client-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    ingress.class: ingress-nginx-controller-89758f7c6-bfwdn
+    ingress.class: triqui-class
 spec:
   rules:
   - http:
