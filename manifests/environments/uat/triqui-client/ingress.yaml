@@ -4,13 +4,13 @@ metadata:
   name: triqui-client-ingress
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   rules:
   - http:
       paths:
-      - path: /triqui
+      - path: /(.*)
         pathType: Exact
         backend:
           service:
