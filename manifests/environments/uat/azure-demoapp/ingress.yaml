@@ -29,7 +29,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: aks-helloworld-one
+            name: triqui-client-svc
             port:
               number: 80
 ---
