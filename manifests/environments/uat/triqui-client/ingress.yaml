@@ -4,6 +4,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
   name: triqui-client-ingress
   namespace: default
 spec:
@@ -16,5 +17,5 @@ spec:
                 name: triqui-client-svc
                 port:
                   number: 80
-            path: /(.*)
+            path: /hello-world-one(/|$)(.*)
             pathType: Prefix
