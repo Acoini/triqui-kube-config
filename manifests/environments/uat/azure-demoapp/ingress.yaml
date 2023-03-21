@@ -11,25 +11,29 @@ spec:
   rules:
   - http:
       paths:
-      - path: /hello-world-one(/|$)(.*)
+
+      - host: www.acoini.com
+        path: /hello-world-one(/|$)(.*)
         pathType: Prefix
         backend:
           service:
             name: aks-helloworld-one
             port:
               number: 80
-      - path: /hello-world-two(/|$)(.*)
+      - host: www.acoini.com
+        path: /hello-world-two(/|$)(.*)
         pathType: Prefix
         backend:
           service:
             name: aks-helloworld-two
             port:
               number: 80
-      - path: /(.*)
+      - host: www.acoini.com
+        path: /(.*)
         pathType: Prefix
         backend:
           service:
-            name: aks-helloworld-one
+            name: triqui-client-svc
             port:
               number: 80
 ---
