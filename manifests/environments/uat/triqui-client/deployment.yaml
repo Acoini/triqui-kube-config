@@ -1,24 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: triqui-client-deployment
+  name: triqui-client
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: triqui-client-deployment
+      app: triqui-client
   template:
     metadata:
       labels:
-        app: triqui-client-deployment
+        app: triqui-client
     spec:
       containers:
-      - name: triqui-client-deployment
+      - name: triqui-client
         image: ghcr.io/bicora/triqui:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
           - containerPort: 3000
       imagePullSecrets:
@@ -29,8 +25,9 @@ kind: Service
 metadata:
   name: triqui-client-svc
 spec:
+  type: ClusterIP
   selector:
-    app: triqui-client-deployment
+    app: triqui-client
   ports:
     - port: 80
       targetPort: 3000
