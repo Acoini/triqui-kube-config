@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: www.acoini.com
+  - host: acoini.com
     http:
       paths:
       - path: /hello-world-one(/|$)(.*)
