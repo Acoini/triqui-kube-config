@@ -9,8 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: acoini.com
-    http:
+  - http:
       paths:
       - path: /hello-world-one(/|$)(.*)
         pathType: Prefix
@@ -30,7 +29,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: aks-helloworld-one
+            name: triqui-client-svc
             port:
               number: 80
 ---
