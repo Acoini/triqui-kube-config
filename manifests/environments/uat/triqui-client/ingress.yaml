@@ -3,15 +3,16 @@ kind: Ingress
 metadata:
   name: triqui-client-ingress
   annotations:
-    ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
   - http:
       paths:
-      - path: /(.*)
-        pathType: Prefix
+      - path: /triqui
+        pathType: Exact
         backend:
           service:
             name: triqui-client-svc
