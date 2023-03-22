@@ -6,3 +6,4 @@ controller:
 #         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
         service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: /healthz
         controller.nodeSelector.kubernetes.io/os: linux
+        externalTrafficPolicy: "local"

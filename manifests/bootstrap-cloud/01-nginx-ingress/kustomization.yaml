@@ -6,6 +6,8 @@ kind: Kustomization
 #   - 00-namespace.yaml
 
 helmCharts:
+
+# https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx
   - name: ingress-nginx
     releaseName: ingress-nginx
     repo: https://kubernetes.github.io/ingress-nginx
