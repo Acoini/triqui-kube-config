@@ -19,3 +19,15 @@ spec:
                   number: 80
             path: /(.*)
             pathType: Prefix
+    - host: acoini.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: triqui-app-svc
+                port:
+                  number: 80
+            path: /(.*)
+            pathType: Prefix
+
+
