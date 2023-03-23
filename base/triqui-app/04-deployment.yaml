@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: triqui-client
+  name: triqui-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: triqui-client
+      app: triqui-app
   template:
     metadata:
       labels:
-        app: triqui-client
+        app: triqui-app
     spec:
       containers:
-      - name: triqui-client
+      - name: triqui-app
         image: ghcr.io/bicora/triqui:latest
         ports:
           - containerPort: 3000
@@ -23,11 +23,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: triqui-client-svc
+  name: triqui-app-svc
 spec:
   type: ClusterIP
   selector:
-    app: triqui-client
+    app: triqui-app
   ports:
     - port: 80
       targetPort: 3000

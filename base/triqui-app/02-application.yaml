@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: https://github.com/Bicora/triqui-kube-config
     targetRevision: HEAD
-    path: manifests/environments/uat/triqui-client
+    path: base/triqui-app
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: triqui
 
   syncPolicy:
     syncOptions:
