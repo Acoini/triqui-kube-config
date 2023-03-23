@@ -5,7 +5,8 @@ namespace: argocd
 resources:
   - 00-namespace.yaml
   - 01-install.yaml
+  - 02-repo-creds.yaml
 
 
 patchesStrategicMerge:
-  - argocd-server-patch.yaml
+  - patches/argocd-server.yaml
