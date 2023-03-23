@@ -5,7 +5,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
   name: triqui-app-ingress
-  namespace: default
+  namespace: triqui
 spec:
   ingressClassName: nginx
   rules:
